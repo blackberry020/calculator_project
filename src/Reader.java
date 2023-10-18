@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Reader {
-    public static String read(String filePath) {
+    public static String read(String filePath) throws IOException{
 
         StringBuilder builder = new StringBuilder();
 
