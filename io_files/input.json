@@ -1,1 +1,6 @@
-{"age":30, "car":null, "name":"John"}
+
+  {
+    "AlgebraicExpression": {
+      "expression": "2+2"
+    }
+  }

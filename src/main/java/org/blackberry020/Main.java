@@ -1,15 +1,17 @@
 package org.blackberry020;
 
-import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.StringReader;
-import java.io.StringWriter;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class Main {
-
     /*
         mini tasks for the evening:
             import tests
@@ -18,16 +20,12 @@ public class Main {
             create an interface for reader
             create 3 classes Readers derived from Reader interface
      */
-    public static void main(String[] args) throws IOException, JAXBException {
-        String filePath = "io_files/input.xml";
-        String xmldata = Reader.read(filePath);
 
-        StringReader reader = new StringReader(xmldata);
+    public static void main(String[] args) {
 
-        JAXBContext context = JAXBContext.newInstance(AlgebraicExpression.class);
-        Unmarshaller unmarshaller = context.createUnmarshaller();
+        String fileName = "io_files/input.json";
 
-        AlgebraicExpression dop = (AlgebraicExpression) unmarshaller.unmarshal(reader);
+        AlgebraicExpression dop = JsonReader.read(fileName);
 
         System.out.println(dop.expression);
     }
