@@ -1,15 +1,6 @@
 package org.blackberry020;
 
 import javax.xml.bind.JAXBException;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 public class Main {
     /*
@@ -21,11 +12,12 @@ public class Main {
             create 3 classes Readers derived from Reader interface
      */
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        String fileName = "io_files/input.json";
+        String fileName = "io_files/input.txt";
 
-        AlgebraicExpression dop = JsonReader.read(fileName);
+        Reader reader = ReaderFactory.getReader(fileName);
+        AlgebraicExpression dop = reader.read(fileName);
 
         System.out.println(dop.expression);
     }

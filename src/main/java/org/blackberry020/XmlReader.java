@@ -1,19 +1,26 @@
 package org.blackberry020;
 
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
-import java.io.IOException;
-import java.io.StringReader;
 
-public class XmlReader {
-    public static AlgebraicExpression read(String filePath) throws IOException, JAXBException {
-        String xmldata = Reader.read(filePath);
-        StringReader reader = new StringReader(xmldata);
+public class XmlReader implements Reader {
 
-        JAXBContext context = JAXBContext.newInstance(AlgebraicExpression.class);
-        Unmarshaller unmarshaller = context.createUnmarshaller();
+    @Override
+    public AlgebraicExpression read(String filePath) {
+        String xmldata = StringReader.read(filePath);
+        java.io.StringReader reader = new java.io.StringReader(xmldata);
 
-        return (AlgebraicExpression) unmarshaller.unmarshal(reader);
+        AlgebraicExpression result = new AlgebraicExpression();
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(AlgebraicExpression.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            result = (AlgebraicExpression) unmarshaller.unmarshal(reader);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return result;
     }
 }

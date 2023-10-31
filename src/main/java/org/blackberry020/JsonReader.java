@@ -9,21 +9,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class JsonReader {
+public class JsonReader implements Reader {
 
-    public static void write(String fileName) {
-
-        JSONObject exp = new JSONObject();
-        exp.put("expression", "2+2");
-
-        try (FileWriter file = new FileWriter(fileName)) {
-            file.write(exp.toJSONString());
-            file.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public static AlgebraicExpression read(String fileName) {
+    @Override
+    public AlgebraicExpression read(String fileName) {
         JSONParser jsonParser = new JSONParser();
         Object obj = null;
         AlgebraicExpression result = null;

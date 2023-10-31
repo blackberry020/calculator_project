@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <algebraicExpression>
-    <expression>2+2</expression>
+    <expression>(3+4)*6-11</expression>
 </algebraicExpression>
