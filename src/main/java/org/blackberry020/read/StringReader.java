@@ -1,4 +1,4 @@
-package org.blackberry020;
+package org.blackberry020.read;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

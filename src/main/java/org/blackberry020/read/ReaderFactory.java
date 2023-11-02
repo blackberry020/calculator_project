@@ -1,4 +1,4 @@
-package org.blackberry020;
+package org.blackberry020.read;
 
 import java.util.HashMap;
 import java.util.stream.Collectors;

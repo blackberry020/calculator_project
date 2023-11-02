@@ -1,4 +1,4 @@
-import org.blackberry020.StringReader;
+import org.blackberry020.read.StringReader;
 import org.junit.Test;
 
 import java.io.IOException;

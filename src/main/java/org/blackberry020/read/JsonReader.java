@@ -1,13 +1,10 @@
-package org.blackberry020;
+package org.blackberry020.read;
 
+import org.blackberry020.AlgebraicExpression;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class JsonReader implements Reader {
 

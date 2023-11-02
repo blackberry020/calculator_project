@@ -1,4 +1,6 @@
-package org.blackberry020;
+package org.blackberry020.read;
+
+import org.blackberry020.AlgebraicExpression;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;

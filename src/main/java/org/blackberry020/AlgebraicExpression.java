@@ -9,11 +9,11 @@ public class AlgebraicExpression {
 
     public String expression;
 
-    AlgebraicExpression(String exp) {
+    public AlgebraicExpression(String exp) {
         this.expression = exp;
     }
 
-    AlgebraicExpression() {
+    public AlgebraicExpression() {
         this.expression = "";
     }
 }
