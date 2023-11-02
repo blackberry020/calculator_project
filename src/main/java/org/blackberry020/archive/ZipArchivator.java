@@ -12,18 +12,8 @@ public class ZipArchivator {
 
     public void zip(String fileNameToArchive, String zipFileName) {
 
-        File zipFile = null;
-
-        try {
-            zipFile = new File(zipFileName);
-            zipFile.createNewFile();
-        }
-        catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-
         try (
-                ZipOutputStream zout = new ZipOutputStream(new FileOutputStream(zipFile));
+                ZipOutputStream zout = new ZipOutputStream(new FileOutputStream(zipFileName));
                 FileInputStream fis = new FileInputStream(fileNameToArchive);
         ) {
             ZipEntry entry1 = new ZipEntry(fileNameToArchive);

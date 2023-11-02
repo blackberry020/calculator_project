@@ -16,7 +16,7 @@ public class Main {
         */
 
         String fileName = "io_files/input.txt";
-        String zippedInput = "zips/inputTxt.zip";
+        String zippedInput = "archives/zips/inputTxt.zip";
 
         ZipArchivator archivator = new ZipArchivator();
         archivator.zip(fileName, zippedInput);
