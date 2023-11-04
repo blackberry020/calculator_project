@@ -35,8 +35,12 @@ public class ZipArchivator {
             ZipEntry entry;
             String name;
 
+            boolean isEmpty = true;
+
             while((entry = zin.getNextEntry()) != null){
-                name = entry.getName();
+                //name = entry.getName();
+
+                isEmpty = false;
 
                 FileOutputStream fout = new FileOutputStream(usualFileName);
 
@@ -47,6 +51,10 @@ public class ZipArchivator {
                 fout.flush();
                 zin.closeEntry();
                 fout.close();
+            }
+
+            if (isEmpty) {
+                System.out.println("your zip is empty");
             }
         }
         catch(Exception ex) {

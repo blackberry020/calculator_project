@@ -15,10 +15,11 @@ public class Main {
         System.out.println(dop.expression);
         */
 
-        String fileName = "io_files/input.txt";
+        String fileName = "archives/unzips/new_in.txt";
         String zippedInput = "archives/zips/inputTxt.zip";
 
         ZipArchivator archivator = new ZipArchivator();
-        archivator.zip(fileName, zippedInput);
+        archivator.unzip(zippedInput, fileName);
+        //archivator.zip(fileName, zippedInput);
     }
 }
