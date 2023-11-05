@@ -14,8 +14,10 @@ public class StringReader {
             String str;
 
             while ((str = buffer.readLine()) != null) {
-                builder.append(str).append("\n");
+                builder.append(str).append('\n');
             }
+
+            builder = new StringBuilder(builder.substring(0, builder.length() - 1));
         }
         catch (IOException e) {
             System.out.println(e.getMessage());

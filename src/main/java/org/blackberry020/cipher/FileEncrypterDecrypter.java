@@ -61,6 +61,6 @@ public class FileEncrypterDecrypter {
             System.out.println(e.getMessage());
         }
 
-        return content;
+        return content.substring(0, content.length() - 1);
     }
 }
