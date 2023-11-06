@@ -1,6 +1,7 @@
 package org.blackberry020;
 
-import org.blackberry020.archive.ZipArchivator;
+import org.blackberry020.archive.Unzipper;
+import org.blackberry020.archive.Zipper;
 
 public class Main {
 
@@ -15,11 +16,15 @@ public class Main {
         System.out.println(dop.expression);
         */
 
-        String fileName = "archives/unzips/new_in.txt";
-        String zippedInput = "archives/zips/inputTxt.zip";
+        //Zipper zipper = new Zipper();
+        //zipper.zip("io_files", "archives/zips/io_files.zip");
 
-        ZipArchivator archivator = new ZipArchivator();
-        archivator.unzip(zippedInput, fileName);
-        //archivator.zip(fileName, zippedInput);
+        Unzipper unzipper = new Unzipper();
+        try {
+            unzipper.unzip("archives/zips/prob1.zip");
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

@@ -1,5 +1,5 @@
 import org.blackberry020.AlgebraicExpression;
-import org.blackberry020.cipher.FileEncrypterDecrypter;
+import org.blackberry020.cipher.StringEncrypterDecrypter;
 import org.blackberry020.read.Reader;
 import org.blackberry020.read.ReaderFactory;
 import org.junit.Test;
@@ -21,16 +21,12 @@ public class CipherTest {
         String originalContent = "some_content\nanother_content\n";
         SecretKey secretKey = KeyGenerator.getInstance("AES").generateKey();
 
-        //System.out.println(originalContent);
-
-        FileEncrypterDecrypter fileEncrypterDecrypter
-                = new FileEncrypterDecrypter(secretKey, "AES/CBC/PKCS5Padding");
+        StringEncrypterDecrypter fileEncrypterDecrypter
+                = new StringEncrypterDecrypter(secretKey, "AES/CBC/PKCS5Padding");
 
         fileEncrypterDecrypter.encrypt(originalContent, "baz.enc");
 
         String decryptedContent = fileEncrypterDecrypter.decrypt("baz.enc");
-
-        //System.out.println(decryptedContent);
 
         assertThat(decryptedContent, is(originalContent));
 
@@ -38,9 +34,9 @@ public class CipherTest {
     }
 
     @Test
-    public void encrypt_decrypt_input() throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException {
+    public void encrypt_decrypt_input() throws Exception {
 
-        String fileName = "io_files/input.txt";
+        String fileName = "archives/zips/inputTxt.zip";
 
         Reader reader = ReaderFactory.getReader(fileName);
         AlgebraicExpression dop = reader.read(fileName);
@@ -50,8 +46,8 @@ public class CipherTest {
 
         //System.out.println("original " + originalContent);
 
-        FileEncrypterDecrypter fileEncrypterDecrypter
-                = new FileEncrypterDecrypter(secretKey, "AES/CBC/PKCS5Padding");
+        StringEncrypterDecrypter fileEncrypterDecrypter
+                = new StringEncrypterDecrypter(secretKey, "AES/CBC/PKCS5Padding");
 
         fileEncrypterDecrypter.encrypt(originalContent, "baz.enc");
 

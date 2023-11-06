@@ -3,17 +3,15 @@ package org.blackberry020.cipher;
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
 import java.io.*;
-import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
 
-public class FileEncrypterDecrypter {
+public class StringEncrypterDecrypter {
 
     private SecretKey secretKey;
     private Cipher cipher;
 
-    public FileEncrypterDecrypter(SecretKey secretKey, String transformation) throws NoSuchPaddingException, NoSuchAlgorithmException {
+    public StringEncrypterDecrypter(SecretKey secretKey, String transformation) throws NoSuchPaddingException, NoSuchAlgorithmException {
         this.secretKey = secretKey;
         this.cipher = Cipher.getInstance(transformation);
     }
