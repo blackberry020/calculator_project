@@ -28,7 +28,7 @@ public class Zipper {
             files = fileSource.listFiles();
         else files = new File[]{fileSource};
 
-        for(int i = 0; i < files.length; i++) {
+        for (int i = 0; i < files.length; i++) {
             if(files[i].isDirectory()) {
                 addDirectory(zout, files[i]);
                 continue;

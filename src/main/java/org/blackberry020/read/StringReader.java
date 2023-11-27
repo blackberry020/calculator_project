@@ -17,7 +17,8 @@ public class StringReader {
                 builder.append(str).append('\n');
             }
 
-            builder = new StringBuilder(builder.substring(0, builder.length() - 1));
+            if (!builder.isEmpty())
+                builder = new StringBuilder(builder.substring(0, builder.length() - 1));
         }
         catch (IOException e) {
             System.out.println(e.getMessage());

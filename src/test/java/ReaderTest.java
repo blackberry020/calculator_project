@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ReaderTest {
     @Test
-    public void readerReadsTxtFileAndFoundsNothing() throws IOException{
+    public void readerReadsTxtFileAndFindsNothing() throws IOException{
         String filePath = "io_files/empty.txt";
         String expected = "";
         assertEquals(expected, StringReader.read(filePath));
@@ -16,7 +16,7 @@ public class ReaderTest {
     @Test
     public void readerReadsTxtFile() throws IOException {
         String filePath = "io_files/input.txt";
-        String expected = "(3+4)*6-11\n";
+        String expected = "(3+4)*6-11";
         assertEquals(expected, StringReader.read(filePath));
     }
 }

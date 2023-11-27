@@ -25,7 +25,6 @@ public class StringEncrypterDecrypter {
 
             fileOut.write(iv);
             cipherOut.write(content.getBytes());
-            //System.out.println(Arrays.toString(content.getBytes()));
 
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -50,7 +49,6 @@ public class StringEncrypterDecrypter {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     sb.append(line + '\n');
-                    //System.out.println(line);
                 }
                 content = sb.toString();
             }

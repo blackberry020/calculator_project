@@ -17,7 +17,7 @@ import static org.hamcrest.core.Is.is;
 public class CipherTest {
 
     @Test
-    public void whenEncryptingIntoFile_andDecryptingFileAgain_thenOriginalStringIsReturned() throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException {
+    public void whenEncryptingIntoFileAndDecryptingFileAgainThenOriginalStringIsReturned() throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException {
         String originalContent = "some_content\nanother_content\n";
         SecretKey secretKey = KeyGenerator.getInstance("AES").generateKey();
 
@@ -34,17 +34,15 @@ public class CipherTest {
     }
 
     @Test
-    public void encrypt_decrypt_input() throws Exception {
+    public void encryptsAndDecryptsInputFileDirectory() throws Exception {
 
-        String fileName = "archives/zips/inputTxt.zip";
+        String fileName = "io_files";
 
         Reader reader = ReaderFactory.getReader(fileName);
         AlgebraicExpression dop = reader.read(fileName);
 
         String originalContent = dop.expression;
         SecretKey secretKey = KeyGenerator.getInstance("AES").generateKey();
-
-        //System.out.println("original " + originalContent);
 
         StringEncrypterDecrypter fileEncrypterDecrypter
                 = new StringEncrypterDecrypter(secretKey, "AES/CBC/PKCS5Padding");
@@ -53,10 +51,8 @@ public class CipherTest {
 
         String decryptedContent = fileEncrypterDecrypter.decrypt("baz.enc");
 
-        //System.out.println("dectypted " + decryptedContent);
-
         assertThat(decryptedContent, is(originalContent));
 
-        new File("baz.enc").delete(); // cleanup
+        new File("baz.enc").delete();
     }
 }
