@@ -16,9 +16,9 @@ public class Main {
 
         BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in));
 
-        //System.out.println("Enter the name of file that contains an algebraic expression");
-        //String fileName = consoleReader.readLine();
-        String fileName = "io_files/input.txt";
+        System.out.println("Enter the name of file that contains an algebraic expression");
+        String fileName = consoleReader.readLine();
+        //String fileName = "io_files/input.txt";
 
         if (!fileName.matches("^[^\\.]+\\.((txt)|(xml)|(json))$")) {
             System.out.println("Wrong file name. It should have txt, xml or json extension");
