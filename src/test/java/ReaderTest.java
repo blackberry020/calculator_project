@@ -1,4 +1,4 @@
-import org.blackberry020.read.StringReader;
+import org.blackberry020.core.read.StringReader;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -16,7 +16,7 @@ public class ReaderTest {
     @Test
     public void readerReadsTxtFile() throws IOException {
         String filePath = "io_files/input.txt";
-        String expected = "(3+4)*6-11";
+        String expected = "(6+10-4)/(1+1*2)+1";
         assertEquals(expected, StringReader.read(filePath));
     }
 }

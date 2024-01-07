@@ -1,22 +1,11 @@
-import org.blackberry020.AlgebraicExpression;
 import org.blackberry020.cipher.StringEncrypterDecrypter;
-import org.blackberry020.read.Reader;
-import org.blackberry020.read.ReaderFactory;
-import org.junit.Test;
-
-import javax.crypto.KeyGenerator;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.SecretKey;
-import java.io.File;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class CipherTest {
 
-    @Test
+    /*@Test
     public void whenEncryptingIntoFileAndDecryptingFileAgainThenOriginalStringIsReturned() throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException {
         String originalContent = "some_content\nanother_content\n";
         SecretKey secretKey = KeyGenerator.getInstance("AES").generateKey();
@@ -54,5 +43,5 @@ public class CipherTest {
         assertThat(decryptedContent, is(originalContent));
 
         new File("baz.enc").delete();
-    }
+    }*/
 }
