@@ -1,5 +1,6 @@
 package org.blackberry020.rest;
 
+import org.blackberry020.core.services.CalculationService;
 import org.blackberry020.dto.CalculationRequest;
 import org.blackberry020.dto.CalculationResponse;
 
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/insurance/travel")
+@RequestMapping("/calculator/calculate")
 public class CalculatorController {
 
     @Autowired private CalculationService calculationService;
