@@ -9,5 +9,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CalculationRequest {
+public class CalculateRequest {
+    String filePath;
 }

@@ -1,8 +1,8 @@
 package org.blackberry020.rest;
 
 import org.blackberry020.core.services.CalculationService;
-import org.blackberry020.dto.CalculationRequest;
-import org.blackberry020.dto.CalculationResponse;
+import org.blackberry020.dto.CalculateRequest;
+import org.blackberry020.dto.CalculateResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,8 +19,8 @@ public class CalculatorController {
     @PostMapping(path = "/",
             consumes = "application/json",
             produces = "application/json")
-    public CalculationResponse calculatePremium(@RequestBody CalculationRequest request) {
-        CalculationResponse response = calculationService.calculate(request);
+    public CalculateResponse calculatePremium(@RequestBody CalculateRequest request) {
+        CalculateResponse response = calculationService.calculate(request);
         return response;
     }
 

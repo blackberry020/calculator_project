@@ -1,12 +1,8 @@
 package org.blackberry020.core.services;
 
-import org.blackberry020.dto.CalculationRequest;
-import org.blackberry020.dto.CalculationResponse;
-import org.springframework.stereotype.Component;
+import org.blackberry020.dto.CalculateRequest;
+import org.blackberry020.dto.CalculateResponse;
 
-@Component
-public class CalculationService {
-    public CalculationResponse calculate(CalculationRequest request) {
-        return null;
-    }
+public interface CalculationService {
+    public CalculateResponse calculate(CalculateRequest request);
 }
