@@ -15,7 +15,7 @@ class ExtensionValidation implements CalculateRequestValidation {
 
     @Override
     public Optional<ValidationError> check(CalculateRequest request) {
-        return (!request.getFilePath().matches("^[^\\.]+\\.((txt)|(xml)|(json))$"))
+        return (!request.getExtension().matches("^((txt)|(xml)|(json)|(rar)|(zip))$"))
                 ? Optional.of(errorFactory.buildError("ERROR_CODE_1"))
                 : Optional.empty();
     }

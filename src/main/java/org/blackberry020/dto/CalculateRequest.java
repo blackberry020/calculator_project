@@ -5,10 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class CalculateRequest {
-    String filePath;
+    String file;
+    String extension;
+    ArrayList<String> commands;
 }
