@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component
-class ExtensionValidation implements CalculateRequestValidation {
+class ExtensionValidation extends CalculateRequestValidationImpl {
 
     @Autowired
     private ValidationErrorFactory errorFactory;
@@ -16,7 +16,7 @@ class ExtensionValidation implements CalculateRequestValidation {
     @Override
     public Optional<ValidationError> check(CalculateRequest request) {
         return (!request.getExtension().matches("^((txt)|(xml)|(json)|(rar)|(zip))$"))
-                ? Optional.of(errorFactory.buildError("ERROR_CODE_1"))
+                ? Optional.of(errorFactory.buildError("ERROR_CODE_1", request.getExtension()))
                 : Optional.empty();
     }
 }

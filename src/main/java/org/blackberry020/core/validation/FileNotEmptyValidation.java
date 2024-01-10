@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component
-class FileNotEmptyValidation implements CalculateRequestValidation {
+class FileNotEmptyValidation extends CalculateRequestValidationImpl {
 
     @Autowired
     private ValidationErrorFactory errorFactory;

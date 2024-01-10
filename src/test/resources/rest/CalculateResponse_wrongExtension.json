@@ -1,0 +1,9 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_1",
+      "description": "Unsupported file extension html"
+    }
+  ],
+  "resultValue": 0.0
+}

@@ -17,4 +17,11 @@ class ValidationErrorFactory {
                 errorCodeUtil.getErrorDescription(errorCode)
         );
     }
+
+    public ValidationError buildError(String errorCode, String placeholder) {
+        return new ValidationError(
+                errorCode,
+                errorCodeUtil.getErrorDescription(errorCode, placeholder)
+        );
+    }
 }

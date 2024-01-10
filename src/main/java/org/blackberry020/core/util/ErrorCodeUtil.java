@@ -6,6 +6,7 @@ import org.springframework.core.io.support.PropertiesLoaderUtils;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.text.MessageFormat;
 import java.util.Properties;
 
 @Component
@@ -21,4 +22,7 @@ public class ErrorCodeUtil {
         return properties.getProperty(errorCode);
     }
 
+    public String getErrorDescription(String errorCode, String placeholder) {
+        return MessageFormat.format(properties.getProperty(errorCode), placeholder);
+    }
 }

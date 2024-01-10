@@ -20,8 +20,7 @@ public class CalculatorController {
             consumes = "application/json",
             produces = "application/json")
     public CalculateResponse calculatePremium(@RequestBody CalculateRequest request) {
-        CalculateResponse response = calculationService.calculate(request);
-        return response;
+        return calculationService.calculate(request);
     }
 
 }

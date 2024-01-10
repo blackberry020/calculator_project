@@ -7,29 +7,30 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Optional;
+import java.util.List;
 
 @Component
-public class ValidCommandsValidation implements CalculateRequestValidation {
+public class ValidCommandsValidation extends CalculateRequestValidationImpl {
 
     @Autowired
     private ValidationErrorFactory errorFactory;
 
     private final ArrayList<String> availableRequestCommands = new ArrayList<>(Arrays.asList("DECOMPRESS", "DECRYPT"));
-    private final ArrayList<String> availableResponseCommands = new ArrayList<>(Arrays.asList("COMPRESS", "ENCRYPT"));
 
     @Override
-    public Optional<ValidationError> check(CalculateRequest request) {
+    public List<ValidationError> checkList(CalculateRequest request) {
 
         ArrayList<String> commands = request.getCommands();
-        if (commands.isEmpty()) return Optional.empty();
+        ArrayList<ValidationError> errors = new ArrayList<>();
+
+        if (commands.isEmpty()) return errors;
 
         for (String command : commands) {
             if (!availableRequestCommands.contains(command)) {
-                return Optional.of(errorFactory.buildError("ERROR_CODE_3"));
+                errors.add(errorFactory.buildError("ERROR_CODE_3", command));
             }
         }
 
-        return Optional.empty();
+        return errors;
     }
 }
