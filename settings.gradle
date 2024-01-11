@@ -13,5 +13,7 @@ plugins {
 rootProject.name = 'multiproject'
 include(
         'app',
-        'calculator_project'
+        'calculator_project',
+        'client',
+        'dto'
 )

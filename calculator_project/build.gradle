@@ -8,6 +8,7 @@ plugins {
 
 dependencies {
 
+    implementation(project(':dto'))
 
     implementation('org.springframework.boot:spring-boot-starter-web:2.7.5')
     implementation ('com.sun.xml.bind:jaxb-core:4.0.3')
