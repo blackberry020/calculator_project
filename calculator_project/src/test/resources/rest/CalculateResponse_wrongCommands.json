@@ -1,0 +1,17 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_3",
+      "description": "Unknown command COMPRESS"
+    },
+    {
+      "errorCode": "ERROR_CODE_3",
+      "description": "Unknown command ENCRYPT"
+    },
+    {
+      "errorCode": "ERROR_CODE_3",
+      "description": "Unknown command WRONG_COMMAND"
+    }
+  ],
+  "resultValue": 0.0
+}

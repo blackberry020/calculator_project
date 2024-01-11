@@ -1,0 +1,5 @@
+{
+  "file" : "smth",
+  "extension" : "txt",
+  "commands":["DECOMPRESS", "COMPRESS", "ENCRYPT", "DECRYPT", "WRONG_COMMAND"]
+}
