@@ -9,6 +9,7 @@
         </processorPath>
         <module name="multiproject.calculator_project.test" />
         <module name="multiproject.calculator_project.main" />
+        <module name="multiproject.dto.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />

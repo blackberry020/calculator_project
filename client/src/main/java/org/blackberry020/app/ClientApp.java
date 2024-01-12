@@ -4,7 +4,8 @@
 package org.blackberry020.app;
 
 
-import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -13,9 +14,17 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class ClientApp {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        App app = new App();
+        BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println("Enter the name of file that contains an algebraic expression");
+        String fileName = consoleReader.readLine();
+        //String fileName = "io_files/input.txt";
+
+        CalculateRequest restRequest = new CalculateRequest();
+        //ObjectMapper mapper = new ObjectMapper();
+        //String json = mapper.writeValueAsString( serializableObject );
 
         try {
             HttpClient client = HttpClient.newHttpClient();

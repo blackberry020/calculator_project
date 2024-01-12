@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/meow.iml" filepath="$PROJECT_DIR$/meow.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/calculator_project/multiproject.calculator_project.main.iml" filepath="$PROJECT_DIR$/.idea/modules/calculator_project/multiproject.calculator_project.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/calculator_project/multiproject.calculator_project.test.iml" filepath="$PROJECT_DIR$/.idea/modules/calculator_project/multiproject.calculator_project.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dto/multiproject.dto.main.iml" filepath="$PROJECT_DIR$/.idea/modules/dto/multiproject.dto.main.iml" />
     </modules>
   </component>
 </project>
