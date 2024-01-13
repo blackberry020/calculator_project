@@ -1,4 +1,4 @@
-package org.blackberry020.app;
+package org.blackberry020.app.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,10 +11,11 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CalculateResponse extends CoreResponse {
-    double resultValue;
+public class CoreResponse {
 
-    public CalculateResponse(List<ValidationError> errors) {
-        super(errors);
+    private List<ValidationError> errors;
+
+    public boolean hasErrors() {
+        return (errors != null && !errors.isEmpty());
     }
 }

@@ -1,4 +1,4 @@
-package org.blackberry020.dto;
+package org.blackberry020.app.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

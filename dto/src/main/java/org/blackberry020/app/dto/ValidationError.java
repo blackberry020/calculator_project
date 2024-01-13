@@ -1,4 +1,4 @@
-package org.blackberry020.app;
+package org.blackberry020.app.dto;
 
 import lombok.*;
 
