@@ -16,7 +16,14 @@ class ExtensionValidation extends CalculateRequestValidationImpl {
 
     @Override
     public Optional<ValidationError> check(CalculateRequest request) {
-        return (request.getExtension() != null && !request.getExtension().matches("^((txt)|(xml)|(json)|(rar)|(zip))$"))
+
+        if (request.getExtension() == null)
+            return Optional.empty();
+
+        if (request.getExtension().trim().isEmpty())
+            return Optional.empty();
+
+        return (!request.getExtension().matches("^((txt)|(xml)|(json)|(rar)|(zip))$"))
                 ? Optional.of(errorFactory.buildError("ERROR_CODE_1", request.getExtension()))
                 : Optional.empty();
     }
