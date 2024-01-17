@@ -1,5 +1,8 @@
 package org.blackberry020.core.util;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
@@ -10,6 +13,9 @@ import java.text.MessageFormat;
 import java.util.Properties;
 
 @Component
+@Getter
+@Setter
+@AllArgsConstructor
 public class ErrorCodeUtil {
     private final Properties properties;
 
