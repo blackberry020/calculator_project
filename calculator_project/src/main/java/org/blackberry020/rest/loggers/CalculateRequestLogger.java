@@ -1,8 +1,8 @@
-package org.blackberry020.rest;
+package org.blackberry020.rest.loggers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lv.javaguru.travel.insurance.dto.TravelCalculatePremiumRequest;
+import org.blackberry020.app.dto.CalculateRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class CalculateRequestLogger {
     private static final Logger logger = LoggerFactory.getLogger(CalculateRequestLogger.class);
 
-    void log(TravelCalculatePremiumRequest request) {
+    public void log(CalculateRequest request) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             String json = objectMapper.writeValueAsString(request);

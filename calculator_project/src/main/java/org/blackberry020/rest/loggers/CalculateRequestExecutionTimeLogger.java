@@ -6,12 +6,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
 @Component
-class CalculateExecutionTimeLogger {
+public class CalculateRequestExecutionTimeLogger {
 
-    private static final Logger logger = LoggerFactory.getLogger(CalculateExecutionTimeLogger.class);
+    private static final Logger logger = LoggerFactory.getLogger(CalculateRequestExecutionTimeLogger.class);
 
     public void log(StopWatch stopWatch) {
-        stopWatch.stop();
         long elapsedMillis = stopWatch.getTotalTimeMillis();
         logger.info("Request processing time (ms): " + elapsedMillis);
     }
