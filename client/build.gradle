@@ -19,5 +19,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'org.blackberry020.app.App'
+    mainClass = 'org.blackberry020.client.ClientApp'
 }
