@@ -1,13 +1,13 @@
 package org.blackberry020.core.validation;
 
-import org.blackberry020.dto.CalculateRequest;
-import org.blackberry020.dto.ValidationError;
+import org.blackberry020.app.dto.CalculateRequest;
+import org.blackberry020.app.dto.ValidationError;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-class CalculateRequestValidationImpl implements CalculateRequestValidation {
+abstract class CalculateRequestValidationImpl implements CalculateRequestValidation {
     @Override
     public Optional<ValidationError> check(CalculateRequest request) {
         return Optional.empty();

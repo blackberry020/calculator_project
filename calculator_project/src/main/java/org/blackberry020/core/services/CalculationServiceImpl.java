@@ -1,9 +1,9 @@
 package org.blackberry020.core.services;
 
+import org.blackberry020.app.dto.CalculateRequest;
+import org.blackberry020.app.dto.CalculateResponse;
+import org.blackberry020.app.dto.ValidationError;
 import org.blackberry020.core.validation.CalculateRequestValidator;
-import org.blackberry020.dto.CalculateRequest;
-import org.blackberry020.dto.CalculateResponse;
-import org.blackberry020.dto.ValidationError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,0 +1,5 @@
+{
+  "file" : "something",
+  "extension" : "",
+  "commands":["DECOMPRESS", "DECRYPT"]
+}

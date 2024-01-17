@@ -77,6 +77,11 @@ public class CalculatorControllerTest {
         );
 
         compareResponseToRequestInJsonFiles(
+                "rest/CalculateRequest_extensionIsMissing.json",
+                "rest/CalculateResponse_extensionIsMissing.json"
+        );
+
+        compareResponseToRequestInJsonFiles(
                 "rest/CalculateRequest_wrongCommands.json",
                 "rest/CalculateResponse_wrongCommands.json"
         );
