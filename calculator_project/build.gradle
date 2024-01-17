@@ -36,3 +36,9 @@ dependencies {
     testAnnotationProcessor('org.projectlombok:lombok:1.18.24')
 }
 
+application {
+    // Define the main class for the application.
+    mainClass = 'org.blackberry020.calculator_project.CalculatorApplication'
+}
+
+

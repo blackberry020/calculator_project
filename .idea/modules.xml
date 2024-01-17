@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multiproject.iml" filepath="$PROJECT_DIR$/.idea/modules/multiproject.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/calculator_project/multiproject.calculator_project.iml" filepath="$PROJECT_DIR$/.idea/modules/calculator_project/multiproject.calculator_project.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/calculator_project/multiproject.calculator_project.main.iml" filepath="$PROJECT_DIR$/.idea/modules/calculator_project/multiproject.calculator_project.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/calculator_project/multiproject.calculator_project.test.iml" filepath="$PROJECT_DIR$/.idea/modules/calculator_project/multiproject.calculator_project.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/multiproject.client.main.iml" filepath="$PROJECT_DIR$/.idea/modules/client/multiproject.client.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dto/multiproject.dto.main.iml" filepath="$PROJECT_DIR$/.idea/modules/dto/multiproject.dto.main.iml" />
     </modules>
