@@ -1,9 +1,0 @@
-{
-  "errors": [
-    {
-      "errorCode": "ERROR_CODE_2",
-      "description": "Field file must not be empty"
-    }
-  ],
-  "resultValue": 0.0
-}

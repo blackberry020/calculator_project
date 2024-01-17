@@ -1,5 +1,0 @@
-{
-  "file" : "something",
-  "extension" : "json",
-  "commands":["DECOMPRESS", "DECRYPT"]
-}
