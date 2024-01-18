@@ -15,7 +15,7 @@ class FileNotEmptyValidation extends CalculateRequestValidationImpl {
 
     @Override
     public Optional<ValidationError> check(CalculateRequest request) {
-        return (request.getFile() == null || request.getFile().trim().isEmpty())
+        return (request.getFileBase64() == null || request.getFileBase64().trim().isEmpty())
                 ? Optional.of(errorFactory.buildError("ERROR_CODE_2"))
                 : Optional.empty();
     }

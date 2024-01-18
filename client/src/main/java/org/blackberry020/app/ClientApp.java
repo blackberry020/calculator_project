@@ -5,9 +5,13 @@ package org.blackberry020.app;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.blackberry020.app.base64Converter.BaseConverter;
+import org.blackberry020.app.base64Converter.BaseConverterImpl;
+import org.blackberry020.app.byteReader.ByteReader;
 import org.blackberry020.app.dto.CalculateRequest;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -25,8 +29,14 @@ public class ClientApp {
         //String fileName = consoleReader.readLine();
         String fileName = "input.txt";
 
+        ByteReader byteReader = new ByteReader();
+        BaseConverter baseConverter = new BaseConverterImpl();
+        byte[] fileContent = byteReader.read(new FileInputStream(fileName));
+
         CalculateRequest restRequest = new CalculateRequest(
-                fileName, new ArrayList<>()
+                baseConverter.convertFileToBase64(fileContent),
+                "txt",
+                new ArrayList<>()
         );
 
         ObjectMapper objectMapper = new ObjectMapper();

@@ -20,7 +20,7 @@ public class ValidCommandsValidation extends CalculateRequestValidationImpl {
     @Override
     public List<ValidationError> checkList(CalculateRequest request) {
 
-        ArrayList<String> commands = request.getCommands();
+        List<String> commands = request.getCommands();
         ArrayList<ValidationError> errors = new ArrayList<>();
 
         if (commands.isEmpty()) return errors;

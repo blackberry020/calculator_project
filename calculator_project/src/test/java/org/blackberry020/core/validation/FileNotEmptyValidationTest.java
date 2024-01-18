@@ -28,7 +28,7 @@ public class FileNotEmptyValidationTest {
 
     @Test
     public void returnErrorIfFileIsNull() {
-        when(request.getFile()).thenReturn(null);
+        when(request.getFileBase64()).thenReturn(null);
         when(errorFactory.buildError(any())).thenReturn(new ValidationError());
 
         Optional<ValidationError> expected = Optional.of(new ValidationError());
@@ -39,7 +39,7 @@ public class FileNotEmptyValidationTest {
 
     @Test
     public void returnErrorIfFileIsEmpty() {
-        when(request.getFile()).thenReturn("    ");
+        when(request.getFileBase64()).thenReturn("    ");
         when(errorFactory.buildError(any())).thenReturn(new ValidationError());
 
         Optional<ValidationError> expected = Optional.of(new ValidationError());
@@ -50,7 +50,7 @@ public class FileNotEmptyValidationTest {
 
     @Test
     public void returnNothingIfFileIsOk() {
-        when(request.getFile()).thenReturn("txt");
+        when(request.getFileBase64()).thenReturn("txt");
 
         Optional<ValidationError> error = validation.check(request);
         assertEquals(Optional.empty(), error);

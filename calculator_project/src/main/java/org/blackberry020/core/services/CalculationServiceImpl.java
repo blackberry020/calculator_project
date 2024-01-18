@@ -27,6 +27,7 @@ class CalculationServiceImpl implements CalculationService {
     }
 
     CalculateResponse buildResponse(CalculateRequest request) {
+        //byte[] fileContent =
         return new CalculateResponse(1.5);
     }
 }
