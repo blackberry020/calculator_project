@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/calculator_project/multiproject.calculator_project.test.iml" filepath="$PROJECT_DIR$/.idea/modules/calculator_project/multiproject.calculator_project.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/multiproject.client.main.iml" filepath="$PROJECT_DIR$/.idea/modules/client/multiproject.client.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dto/multiproject.dto.main.iml" filepath="$PROJECT_DIR$/.idea/modules/dto/multiproject.dto.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dto/multiproject.dto.test.iml" filepath="$PROJECT_DIR$/.idea/modules/dto/multiproject.dto.test.iml" />
     </modules>
   </component>
 </project>

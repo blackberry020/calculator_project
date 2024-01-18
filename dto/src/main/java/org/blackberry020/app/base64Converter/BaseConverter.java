@@ -4,6 +4,6 @@ import java.io.IOException;
 
 public interface BaseConverter {
 
-    public String convertFileToBase64(String filePath) throws IOException;
-    public String convertBase64ToFile(String data, String extension) throws IOException;
+    public byte[] convertFileToBase64(byte[] fileContent) throws IOException;
+    public byte[] convertBase64ToFile(byte[] baseContent) throws IOException;
 }

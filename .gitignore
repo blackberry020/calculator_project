@@ -3,3 +3,4 @@
 build
 *.iml
 /calculator_project/logs/
+/logs

@@ -23,7 +23,7 @@ public class CalculateRequest {
     public CalculateRequest(String filePath, List<String> actions) throws IOException {
         BaseConverter baseConverter = new BaseConverterImpl();
 
-        try {
+        /*try {
             file = baseConverter.convertFileToBase64(filePath);
             extension = filePath.substring(filePath.lastIndexOf('.' + 1));
         }
@@ -34,6 +34,6 @@ public class CalculateRequest {
             System.out.println("file problem while encoding to base64");
         }
 
-        commands = (ArrayList<String>) actions;
+        commands = (ArrayList<String>) actions;*/
     }
 }
