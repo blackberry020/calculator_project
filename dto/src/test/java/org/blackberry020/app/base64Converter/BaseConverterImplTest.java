@@ -6,7 +6,6 @@ import java.io.*;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -18,7 +17,7 @@ public class BaseConverterImplTest {
         baseConverter = new BaseConverterImpl();
     }
 
-    /*@Test
+    @Test
     public void fileToBaseAndBackContentMustBeTheSame() throws IOException {
         String fileName = "testFile.txt";
         String content = "hi there I'm Alice";
@@ -26,8 +25,8 @@ public class BaseConverterImplTest {
         createFile(fileName);
         writeContent(fileName, content);
 
-        //byte[] baseFile = baseConverter.convertFileToBase64(content.getBytes());
-        //byte[] decodedFile = baseConverter.convertBase64ToFile(baseFile);
+        String baseFile = baseConverter.convertFileToBase64(content.getBytes());
+        byte[] decodedFile = baseConverter.convertBase64ToFile(baseFile);
 
         assertArrayEquals(content.getBytes(), decodedFile);
 
@@ -42,11 +41,11 @@ public class BaseConverterImplTest {
 
         is.close();
 
-        byte[] baseFile = baseConverter.convertFileToBase64(content);
+        String baseFile = baseConverter.convertFileToBase64(content);
         byte[] decodedFile = baseConverter.convertBase64ToFile(baseFile);
 
         assertArrayEquals(content, decodedFile);
-    }*/
+    }
 
     private void createFile(String fileName) {
         try {
