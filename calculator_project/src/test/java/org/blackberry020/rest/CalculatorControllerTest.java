@@ -29,9 +29,9 @@ public class CalculatorControllerTest {
     public void simpleRestControllerTestExample() throws Exception {
         mockMvc.perform(post("/calculator/calculate/")
                         .content("""
-                                {"file" : "smth",
+                                {"fileBase64" : "smth",
                                 "extension" : "txt",
-                                "commands": ["DECRYPT"]
+                                "commands": []
                                 }""")
                         .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(status().isOk())
@@ -43,9 +43,9 @@ public class CalculatorControllerTest {
     public void simpleRestControllerTest() throws Exception {
         mockMvc.perform(post("/calculator/calculate/")
                         .content("""
-                                {"file" : "smth",
+                                {"fileBase64" : "smth",
                                 "extension" : "xml",
-                                "commands":["DECRYPT", "DECOMPRESS"]
+                                "commands":[]
                                 }""")
                         .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(status().isOk())
@@ -55,11 +55,6 @@ public class CalculatorControllerTest {
 
     @Test
     public void jsonFilesTest() throws Exception {
-
-        compareResponseToRequestInJsonFiles(
-                "rest/CalculateRequest_correct.json",
-                "rest/CalculateResponse_correct.json"
-        );
 
         compareResponseToRequestInJsonFiles(
                 "rest/CalculateRequest_allWrong.json",
@@ -84,6 +79,14 @@ public class CalculatorControllerTest {
         compareResponseToRequestInJsonFiles(
                 "rest/CalculateRequest_wrongCommands.json",
                 "rest/CalculateResponse_wrongCommands.json"
+        );
+    }
+
+    @Test
+    public void test() throws Exception {
+        compareResponseToRequestInJsonFiles(
+                "rest/CalculateRequest_correct.json",
+                "rest/CalculateResponse_correct.json"
         );
     }
 

@@ -1,5 +1,5 @@
 {
-  "file" : "something",
+  "fileBase64" : "something",
   "extension" : "",
   "commands":["DECOMPRESS", "DECRYPT"]
 }

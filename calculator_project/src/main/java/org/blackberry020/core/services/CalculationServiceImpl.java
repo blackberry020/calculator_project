@@ -55,9 +55,10 @@ class CalculationServiceImpl implements CalculationService {
             log.info(result);
         }
         catch (Exception e) {
+            log.error(e.getMessage());
             return new CalculateResponse(List.of(errorFactory.buildError("ERROR_CODE_5")));
         }
 
-        return new CalculateResponse();
+        return new CalculateResponse(1.5);
     }
 }

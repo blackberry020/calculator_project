@@ -1,5 +1,5 @@
 {
-  "file" : "smth",
+  "fileBase64" : "smth",
   "extension" : "txt",
   "commands":["DECOMPRESS", "COMPRESS", "ENCRYPT", "DECRYPT", "WRONG_COMMAND"]
 }
