@@ -29,7 +29,7 @@ public class CalculatorControllerTest {
     public void simpleRestControllerTestExample() throws Exception {
         mockMvc.perform(post("/calculator/calculate/")
                         .content("""
-                                {"fileBase64" : "smth",
+                                {"fileBase64" : "MSswLjU=",
                                 "extension" : "txt",
                                 "commands": []
                                 }""")
@@ -43,7 +43,7 @@ public class CalculatorControllerTest {
     public void simpleRestControllerTest() throws Exception {
         mockMvc.perform(post("/calculator/calculate/")
                         .content("""
-                                {"fileBase64" : "smth",
+                                {"fileBase64" : "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pg0KPGFsZ2VicmFpY0V4cHJlc3Npb24+DQogICAgPGV4cHJlc3Npb24+MSswLjU8L2V4cHJlc3Npb24+DQo8L2FsZ2VicmFpY0V4cHJlc3Npb24+",
                                 "extension" : "xml",
                                 "commands":[]
                                 }""")
@@ -54,39 +54,49 @@ public class CalculatorControllerTest {
     }
 
     @Test
-    public void jsonFilesTest() throws Exception {
-
+    public void allGoodTest() throws Exception {
         compareResponseToRequestInJsonFiles(
-                "rest/CalculateRequest_allWrong.json",
-                "rest/CalculateResponse_allWrong.json"
-        );
-
-        compareResponseToRequestInJsonFiles(
-                "rest/CalculateRequest_fileEmpty.json",
-                "rest/CalculateResponse_fileEmpty.json"
-        );
-
-        compareResponseToRequestInJsonFiles(
-                "rest/CalculateRequest_wrongExtension.json",
-                "rest/CalculateResponse_wrongExtension.json"
-        );
-
-        compareResponseToRequestInJsonFiles(
-                "rest/CalculateRequest_extensionIsMissing.json",
-                "rest/CalculateResponse_extensionIsMissing.json"
-        );
-
-        compareResponseToRequestInJsonFiles(
-                "rest/CalculateRequest_wrongCommands.json",
-                "rest/CalculateResponse_wrongCommands.json"
+                "rest/CalculateRequest_correct.json",
+                "rest/CalculateResponse_correct.json"
         );
     }
 
     @Test
-    public void test() throws Exception {
+    public void allWrongTest() throws Exception {
         compareResponseToRequestInJsonFiles(
-                "rest/CalculateRequest_correct.json",
-                "rest/CalculateResponse_correct.json"
+                "rest/CalculateRequest_allWrong.json",
+                "rest/CalculateResponse_allWrong.json"
+        );
+    }
+
+    @Test
+    public void fileIsEmpty() throws Exception {
+        compareResponseToRequestInJsonFiles(
+                "rest/CalculateRequest_fileEmpty.json",
+                "rest/CalculateResponse_fileEmpty.json"
+        );
+    }
+    @Test
+    public void wrongExtension() throws Exception {
+        compareResponseToRequestInJsonFiles(
+                "rest/CalculateRequest_wrongExtension.json",
+                "rest/CalculateResponse_wrongExtension.json"
+        );
+    }
+
+    @Test
+    public void extensionIsMissing() throws Exception {
+        compareResponseToRequestInJsonFiles(
+                "rest/CalculateRequest_extensionIsMissing.json",
+                "rest/CalculateResponse_extensionIsMissing.json"
+        );
+    }
+
+    @Test
+    public void wrongCommands() throws Exception {
+        compareResponseToRequestInJsonFiles(
+                "rest/CalculateRequest_wrongCommands.json",
+                "rest/CalculateResponse_wrongCommands.json"
         );
     }
 
@@ -104,6 +114,9 @@ public class CalculatorControllerTest {
         String responseBodyContent = result.getResponse().getContentAsString();
 
         String jsonResponse = JsonReader.read(fileNameResponse);
+
+        System.out.println(jsonResponse);
+        System.out.println(responseBodyContent);
 
         assertJson(responseBodyContent)
                 .where()

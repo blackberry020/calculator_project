@@ -1,6 +1,6 @@
 package org.blackberry020.core.processor.cmd;
 
-import org.blackberry020.core.encryption.entity.CoreEntity;
+import org.blackberry020.core.processor.entity.CoreEntity;
 
 import java.io.ByteArrayOutputStream;
 import java.util.zip.Inflater;

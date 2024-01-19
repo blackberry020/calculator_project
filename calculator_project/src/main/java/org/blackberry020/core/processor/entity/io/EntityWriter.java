@@ -1,6 +1,6 @@
-package org.blackberry020.core.encryption.io;
+package org.blackberry020.core.processor.entity.io;
 
-import org.blackberry020.core.encryption.entity.CoreEntity;
+import org.blackberry020.core.processor.entity.CoreEntity;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;

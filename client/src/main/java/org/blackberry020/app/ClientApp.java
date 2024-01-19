@@ -27,7 +27,7 @@ public class ClientApp {
 
         System.out.println("Enter the name of file that contains an algebraic expression");
         //String fileName = consoleReader.readLine();
-        String fileName = "input.txt";
+        String fileName = "io_files/input.json";
 
         ByteReader byteReader = new ByteReader();
         BaseConverter baseConverter = new BaseConverterImpl();
@@ -35,7 +35,7 @@ public class ClientApp {
 
         CalculateRequest restRequest = new CalculateRequest(
                 baseConverter.convertFileToBase64(fileContent),
-                "txt",
+                "json",
                 new ArrayList<>()
         );
 

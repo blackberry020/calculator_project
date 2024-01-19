@@ -15,7 +15,7 @@ dependencies {
     implementation ('javax.xml.bind:jaxb-api:2.3.1')
     implementation ('com.sun.xml.bind:jaxb-impl:2.3.1')
     implementation 'org.javassist:javassist:3.25.0-GA'
-    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation 'com.google.code.gson:gson:2.9.0'
     implementation 'com.fathzer:javaluator:3.0.3'
 
     implementation 'org.projectlombok:lombok:1.18.28'

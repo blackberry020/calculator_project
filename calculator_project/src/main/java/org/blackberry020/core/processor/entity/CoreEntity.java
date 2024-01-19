@@ -1,4 +1,4 @@
-package org.blackberry020.core.encryption.entity;
+package org.blackberry020.core.processor.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

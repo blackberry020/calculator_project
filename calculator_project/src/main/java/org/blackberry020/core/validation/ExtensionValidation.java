@@ -23,7 +23,7 @@ class ExtensionValidation extends CalculateRequestValidationImpl {
         if (request.getExtension().trim().isEmpty())
             return Optional.empty();
 
-        return (!request.getExtension().matches("^((txt)|(xml)|(json)|(rar)|(zip))$"))
+        return (!request.getExtension().matches("^((txt)|(xml)|(json))$"))
                 ? Optional.of(errorFactory.buildError("ERROR_CODE_1", request.getExtension()))
                 : Optional.empty();
     }

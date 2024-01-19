@@ -1,6 +1,6 @@
 package org.blackberry020.core.processor;
 
-import org.blackberry020.core.encryption.entity.CoreEntity;
+import org.blackberry020.core.processor.entity.CoreEntity;
 import org.blackberry020.core.processor.cmd.ManipulationCommand;
 import org.springframework.stereotype.Component;
 

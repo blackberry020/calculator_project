@@ -1,13 +1,13 @@
-package org.blackberry020.core.read;
+package org.blackberry020.core.readers;
 
 import org.blackberry020.core.AlgebraicExpression;
 
 public class TxtReader implements Reader {
 
     @Override
-    public AlgebraicExpression read(String filePath) {
+    public AlgebraicExpression read(String content) throws Exception {
         AlgebraicExpression result = new AlgebraicExpression();
-        result.expression = StringReader.read(filePath);
+        result.expression = content;
         return result;
     }
 }

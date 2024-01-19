@@ -1,4 +1,4 @@
-package org.blackberry020.core.read;
+package org.blackberry020.core.readers;
 
 import java.util.HashMap;
 import java.util.stream.Collectors;
@@ -13,9 +13,8 @@ public class ReaderFactory {
                         { "json", new JsonReader() },
                 }).collect(Collectors.toMap(data -> (String) data[0], data -> (Reader) data[1]));
 
-        public static Reader getReader(String fileName) throws Exception {
-            String extension = fileName.substring(fileName.indexOf('.') + 1);
-            if (readers.containsKey(extension)) return readers.get(extension);
-            else throw new Exception("there is no such reader for extension " + extension);
+        public static Reader getReader(String extension) {
+            extension = extension.toLowerCase();
+            return readers.get(extension);
         }
 }

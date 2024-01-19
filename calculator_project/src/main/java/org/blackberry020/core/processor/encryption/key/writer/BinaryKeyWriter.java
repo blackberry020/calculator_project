@@ -1,4 +1,4 @@
-package org.blackberry020.core.encryption.key.writer;
+package org.blackberry020.core.processor.encryption.key.writer;
 
 import lombok.AllArgsConstructor;
 

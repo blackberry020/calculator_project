@@ -5,10 +5,8 @@ import org.blackberry020.core.AlgebraicExpression;
 
 public class Calculator {
 
-    public static Double calculate(AlgebraicExpression exp) {
-
+    public static Double calculate(AlgebraicExpression exp) throws Exception {
         DoubleEvaluator evaluator = new DoubleEvaluator();
-
         return evaluator.evaluate(exp.expression);
     }
 }
