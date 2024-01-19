@@ -12,7 +12,7 @@ import java.nio.charset.StandardCharsets;
 @Setter
 public class CoreEntity {
     byte[] data;
-    String getTextRepresentation() throws UnsupportedEncodingException {
+    public String getTextRepresentation() throws UnsupportedEncodingException {
         return new String(data, StandardCharsets.UTF_8);
     }
 }

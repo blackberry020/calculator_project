@@ -1,20 +1,35 @@
 package org.blackberry020.core.services;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.blackberry020.app.base64Converter.BaseConverter;
 import org.blackberry020.app.dto.CalculateRequest;
 import org.blackberry020.app.dto.CalculateResponse;
 import org.blackberry020.app.dto.ValidationError;
+import org.blackberry020.core.encryption.entity.CoreEntity;
+import org.blackberry020.core.processor.CommandProcessorComponent;
+import org.blackberry020.core.processor.cmd.ManipulationCommand;
+import org.blackberry020.core.util.CommandMapperUtil;
 import org.blackberry020.core.validation.CalculateRequestValidator;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.blackberry020.core.validation.ValidationErrorFactory;
 import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
+@Slf4j
 class CalculationServiceImpl implements CalculationService {
 
-    @Autowired
-    private CalculateRequestValidator requestValidator;
+    private final CalculateRequestValidator requestValidator;
+
+    private final BaseConverter baseConverter;
+
+    private final CommandMapperUtil commandMapperUtil;
+
+    private final CommandProcessorComponent commandProcessor;
+
+    private final ValidationErrorFactory errorFactory;
 
     @Override
     public CalculateResponse calculate(CalculateRequest request) {
@@ -27,7 +42,22 @@ class CalculationServiceImpl implements CalculationService {
     }
 
     CalculateResponse buildResponse(CalculateRequest request) {
-        //byte[] fileContent =
-        return new CalculateResponse(1.5);
+        byte[] fileContent = baseConverter.convertBase64ToFile(request.getFileBase64());
+
+        List<ManipulationCommand> commands = commandMapperUtil.mapCommandsToList(request.getCommands());
+
+        try {
+            String result = commandProcessor.execute(
+                    new CoreEntity(fileContent),
+                    commands
+            ).getTextRepresentation();
+
+            log.info(result);
+        }
+        catch (Exception e) {
+            return new CalculateResponse(List.of(errorFactory.buildError("ERROR_CODE_5")));
+        }
+
+        return new CalculateResponse();
     }
 }
