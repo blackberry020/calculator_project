@@ -9,7 +9,7 @@ import org.blackberry020.app.dto.ValidationError;
 import org.blackberry020.core.AlgebraicExpression;
 import org.blackberry020.core.processor.entity.CoreEntity;
 import org.blackberry020.core.evaluation.Calculator;
-import org.blackberry020.core.processor.CommandProcessorComponent;
+import org.blackberry020.core.processor.CommandProcessor;
 import org.blackberry020.core.processor.cmd.ManipulationCommand;
 import org.blackberry020.core.readers.Reader;
 import org.blackberry020.core.readers.ReaderFactory;
@@ -31,7 +31,7 @@ class CalculationServiceImpl implements CalculationService {
 
     private final CommandMapperUtil commandMapperUtil;
 
-    private final CommandProcessorComponent commandProcessor;
+    private final CommandProcessor commandProcessor;
 
     private final ValidationErrorFactory errorFactory;
 

@@ -1,10 +1,12 @@
 package org.blackberry020.core.processor.cmd;
 
 import org.blackberry020.core.processor.entity.CoreEntity;
+import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayOutputStream;
 import java.util.zip.Inflater;
 
+@Component
 public class DecompressCommand implements ManipulationCommand {
     @Override
     public CoreEntity process(CoreEntity entity) throws Exception {

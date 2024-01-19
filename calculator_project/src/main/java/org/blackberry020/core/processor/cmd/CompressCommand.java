@@ -1,10 +1,12 @@
 package org.blackberry020.core.processor.cmd;
 
 import org.blackberry020.core.processor.entity.CoreEntity;
+import org.springframework.stereotype.Component;
 
 import java.util.zip.Deflater;
 import java.io.ByteArrayOutputStream;
 
+@Component
 public class CompressCommand implements ManipulationCommand {
 
     @Override
